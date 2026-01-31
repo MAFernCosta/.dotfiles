@@ -11,7 +11,7 @@ status=$(acpi -b | grep "Battery 0" | cut -d ":" -f 2 | cut -d "," -f 1)
 curStatus="NR"
 
 case $status in 
-    " Not Charging")
+    " Not charging")
         curStatus=$notCharging
         ;;
     " Discharging")
