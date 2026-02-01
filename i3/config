@@ -119,16 +119,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -215,6 +215,13 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/wallpaper.png
 workspace $ws1 output DP-2
 workspace $ws2 output DVI-I-1-1
 workspace $ws3 output DVI-I-2-2
+workspace $ws9 output DVI-I-2-2
 
 # Display layout detector, it executes every time you reload i3wm.
 exec_always --no-startup-id ~/.dotfiles/i3/skripts/auto-display-set.sh
+
+# Apps with predifined worspaces
+assign [class="Google-chrome"] $ws3
+for_window [title="^Microsoft Teams \(PWA\)"] move to workspace $ws1
+assign [class="Virt-manager"] $ws9
+assign [class="Spotify"] $ws10
