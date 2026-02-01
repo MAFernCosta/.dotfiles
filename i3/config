@@ -225,3 +225,9 @@ assign [class="Google-chrome"] $ws3
 for_window [title="^Microsoft Teams \(PWA\)"] move to workspace $ws1
 assign [class="Virt-manager"] $ws9
 assign [class="Spotify"] $ws10
+
+# Shortcut to move workspace left or right
+bindsym $mod+Control+Shift+h move workspace to output left
+bindsym $mod+Control+Shift+l move workspace to output right
+
+
