@@ -210,3 +210,8 @@ for_window [class="Blueman-manager"] floating enable
 
 # Setting the wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/wallpaper.png
+
+# Assign specific workspace to a display
+workspace $ws1 output DP-2
+workspace $ws2 output DVI-I-1-1
+workspace $ws3 output DVI-I-2-2
