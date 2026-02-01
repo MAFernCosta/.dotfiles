@@ -198,7 +198,8 @@ bar {
 
 bindsym $mod+shift+x exec i3lock
 
-#bindsym $mod+tab exec rofi -show window
+# Shortcut to show the apps that are open
+bindsym $mod+shift+w exec rofi -show window
 
 
 ## Force windows to open in float mode
