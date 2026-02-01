@@ -202,3 +202,6 @@ bindsym $mod+shift+x exec i3lock
 
 # Force pavucontrol to open in float
 for_window [class="Pavucontrol"] floating enable
+
+# Setting the wallpaper
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/wallpaper.png
