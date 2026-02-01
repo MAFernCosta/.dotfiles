@@ -212,10 +212,14 @@ for_window [class="Blueman-manager"] floating enable
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/wallpaper.png
 
 # Assign specific workspace to a display
-workspace $ws1 output DP-2
-workspace $ws2 output DVI-I-1-1
-workspace $ws3 output DVI-I-2-2
-workspace $ws9 output DVI-I-2-2
+set $laptopDp "DP-2"
+set $mainDp "DVI-I-1-1"
+set $secDp "DVI-I-2-2"
+workspace $ws1 output $laptopDp
+workspace $ws2 output $mainDp
+workspace $ws3 output $secDp
+workspace $ws9 output $secDp
+workspace $ws5 output $secDp
 
 # Display layout detector, it executes every time you reload i3wm.
 exec_always --no-startup-id ~/.dotfiles/i3/skripts/auto-display-set.sh
@@ -225,6 +229,7 @@ assign [class="Google-chrome"] $ws3
 for_window [title="^Microsoft Teams \(PWA\)"] move to workspace $ws1
 assign [class="Virt-manager"] $ws9
 assign [class="Spotify"] $ws10
+assign [class="Gnome-terminal"] $ws5
 
 # Shortcut to move workspace left or right
 bindsym $mod+Control+Shift+h move workspace to output left
