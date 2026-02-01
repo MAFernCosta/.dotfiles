@@ -215,3 +215,6 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/wallpaper.png
 workspace $ws1 output DP-2
 workspace $ws2 output DVI-I-1-1
 workspace $ws3 output DVI-I-2-2
+
+# Display layout detector, it executes every time you reload i3wm.
+exec_always --no-startup-id ~/.dotfiles/i3/skripts/auto-display-set.sh
