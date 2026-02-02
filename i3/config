@@ -238,4 +238,8 @@ assign [class="Gnome-terminal"] $ws5
 bindsym $mod+Control+Shift+h move workspace to output left
 bindsym $mod+Control+Shift+l move workspace to output right
 
-
+# Printscreen 
+# Snipping
+bindsym Print exec --no-startup-id scrot -s 'Pictures/Screenshots/screenshot-%Y-%m-%d-%T.jpg' -f -e 'xclip -selection clipboard -target image/png -i $f' 
+# Snapshot whole display
+bindsym Shift+Print exec --no-startup-id scrot 'Pictures/Screenshots/screenshot-%Y-%m-%d-%T.jpg' -e 'xclip -selection clipboard -target image/png -i $f'
