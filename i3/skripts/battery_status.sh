@@ -6,18 +6,27 @@ notCharging="Con"
 disCharging="Dis"
 unknown="?!?"
 
-percentage=$(acpi -b | grep "Battery 0" | cut -d ":" -f 2 | cut -d "," -f 2)
-status=$(acpi -b | grep "Battery 0" | cut -d ":" -f 2 | cut -d "," -f 1)
+# Path for the internal battery it can be BAT0 or BAT1
+BAT_PATH="/sys/class/power_supply/BAT0"
+
+# In case BAT0 doesnt exits swap to BAT1
+if [ ! -d "$BAT_PATH" ]; then
+    BAT_PATH="/sys/class/power_supply/BAT1"
+fi
+
+percentage=$(cat "$BAT_PATH/capacity")
+status=$(cat "$BAT_PATH/status")
+
 curStatus="NR"
 
 case $status in 
-    " Not charging")
+    "Not charging")
         curStatus=$notCharging
         ;;
-    " Discharging")
+    "Discharging")
         curStatus=$disCharging
         ;;
-    " Charging")
+    "Charging")
         curStatus=$charging
         ;;
     *)
@@ -25,5 +34,6 @@ case $status in
         ;;
 esac
 
-echo "$percentage $curStatus"
+echo "$percentage% $curStatus"
+
 
