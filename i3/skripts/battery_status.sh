@@ -19,8 +19,11 @@ status=$(cat "$BAT_PATH/status")
 
 curStatus="NR"
 
-case $status in 
+case $status in
     "Not charging")
+        curStatus=$notCharging
+        ;;
+    "Full")
         curStatus=$notCharging
         ;;
     "Discharging")
