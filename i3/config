@@ -212,7 +212,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
 
 # Setting the wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/wallpaper.png
+exec_always --no-startup-id feh --bg-scale -z ~/Pictures/wallpaper/
 
 # Assign specific workspace to a display
 set $laptopDp "DP-2"
