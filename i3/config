@@ -225,8 +225,8 @@ workspace $ws9 output $secDp
 workspace $ws5 output $secDp
 
 # Display layout detector, it executes every time you reload i3wm.
-exec_always --no-startup-id ~/.dotfiles/i3/skripts/auto-display-set.sh
-
+# exec_always --no-startup-id ~/.dotfiles/i3/skripts/auto-display-set.sh
+bindsym XF86Display exec --no-startup-id ~/.dotfiles/i3/skripts/auto-display-set.sh
 # Apps with predifined worspaces
 assign [class="Google-chrome"] $ws3
 for_window [title="^Microsoft Teams \(PWA\)"] move to workspace $ws1
