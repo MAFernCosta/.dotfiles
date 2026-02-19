@@ -244,3 +244,8 @@ bindsym Print exec --no-startup-id scrot -s 'Pictures/Screenshots/screenshot-%Y-
 # Snapshot whole display
 bindsym Shift+Print exec --no-startup-id scrot 'Pictures/Screenshots/screenshot-%Y-%m-%d-%T.jpg' -e 'xclip -selection clipboard -target image/png -i $f'
 
+# Lock screen after 10 mins, suspend after 20 mins of idle
+exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000" -killtime 20 -killer "systemctl suspend" -detectsleep
+
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
