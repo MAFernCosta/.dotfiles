@@ -269,3 +269,9 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 
 # Start picom - aka: responsible for transparenci in windows
 exec_always --no-startup-id picom -b
+
+#class                         border    backgr.    text     indicator
+client.focused              #141C21   #141C21   #93a1a1   #d64937
+client.unfocused            #1F262A   #1F262A   #93a1a1
+client.focused_inactive     #141c21   #141c21   #93a1a1
+client.urgent               #444444   #b08500   #93a1a1
