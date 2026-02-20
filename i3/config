@@ -264,5 +264,8 @@ bindsym Shift+Print exec --no-startup-id scrot 'Pictures/Screenshots/screenshot-
 # Lock screen after 10 mins, suspend after 20 mins of idle
 exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000" -killtime 20 -killer "systemctl suspend" -detectsleep
 
+# Start Polkit - aka: authentication message box
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
+# Start picom - aka: responsible for transparenci in windows
+exec_always --no-startup-id picom -b
