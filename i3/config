@@ -126,7 +126,7 @@ set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
-set $ws5 "5:"
+set $ws5 "5:" #  The terminal symbol in case you need it later
 set $ws6 "6:"
 set $ws7 "7:"
 set $ws8 "8:"
@@ -249,7 +249,7 @@ assign [class="Google-chrome"] $ws3
 for_window [title="^Microsoft Teams \(PWA\)"] move to workspace $ws1
 assign [class="Virt-manager"] $ws9
 assign [class="Spotify"] $ws10
-assign [class="Gnome-terminal"] $ws5
+#assign [class="Gnome-terminal"] $ws5
 
 # Shortcut to move workspace left or right
 bindsym $mod+Control+Shift+h move workspace to output left
