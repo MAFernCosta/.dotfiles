@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:consolas 6
+font pango:0xProtoNerdFontMono-Regular 5
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -239,7 +239,7 @@ workspace $ws1 output $laptopDp
 workspace $ws2 output $mainDp
 workspace $ws3 output $secDp
 workspace $ws9 output $secDp
-workspace $ws5 output $secDp
+#workspace $ws5 output $secDp
 
 # Display layout detector, it executes every time you reload i3wm.
 # exec_always --no-startup-id ~/.dotfiles/i3/skripts/auto-display-set.sh
@@ -249,7 +249,7 @@ assign [class="Google-chrome"] $ws3
 for_window [title="^Microsoft Teams \(PWA\)"] move to workspace $ws1
 assign [class="Virt-manager"] $ws9
 assign [class="Spotify"] $ws10
-#assign [class="Gnome-terminal"] $ws5
+assign [class="Gnome-terminal"] $ws5
 
 # Shortcut to move workspace left or right
 bindsym $mod+Control+Shift+h move workspace to output left
@@ -262,13 +262,17 @@ bindsym Print exec --no-startup-id scrot -s 'Pictures/Screenshots/screenshot-%Y-
 bindsym Shift+Print exec --no-startup-id scrot 'Pictures/Screenshots/screenshot-%Y-%m-%d-%T.jpg' -e 'xclip -selection clipboard -target image/png -i $f'
 
 # Lock screen after 10 mins, suspend after 20 mins of idle
-exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000" -killtime 20 -killer "systemctl suspend" -detectsleep
+#exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000" -killtime 20 -killer "systemctl suspend" -detectsleep
+#exec --no-startup-id xautolock -time 5 -locker "i3lock -c 000000" -detectsleep
+#exec --no-startup-id xautolock -time 10 -locker "systemctl suspend" -detectsleep
+# sudo nano /etc/systemd/logind.conf IdleAction=suspend IdleActionSec=10min sudo systemctl restart systemd-logind
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000
 
 # Start Polkit - aka: authentication message box
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 # Start picom - aka: responsible for transparenci in windows
-exec_always --no-startup-id picom -b
+#exec_always --no-startup-id picom -b
 
 #class                         border    backgr.    text     indicator
 client.focused              #141C21   #141C21   #93a1a1   #d64937
