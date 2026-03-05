@@ -207,16 +207,28 @@ bar {
 	      padding 2px 8px 2px 8px
 	      #strip_workspace_numbers yes
         font pango:0xProto Nerd Font Mono 10
-         colors {
-	        background #141c21
-	        statusline #141c21
-	        separator #141c21
-	        # colour of border, background, and text
-	        focused_workspace #141c21 #d12f2c #93a1a1
-	        active_workspace #141c21 #141c21 #93a1a1
-	        inactive_workspace #141c21 #141c21 #93a1a1
-	        urgent_workspace #141c21 #b08500 #93a1a1
-	      }
+#         colors {
+#	        background #141c21
+#	        statusline #141c21
+#	        separator #141c21
+#	        # colour of border, background, and text
+#	        focused_workspace #141c21 #d12f2c #93a1a1
+#	        active_workspace #141c21 #141c21 #93a1a1
+#	        inactive_workspace #141c21 #141c21 #93a1a1
+#	        urgent_workspace #141c21 #b08500 #93a1a1
+#	      }
+# Catppuccin-Mocha
+        colors {
+          background  #1e1e2e
+          statusline  #cdd6f4
+          separator   #313244
+
+          # class             border    background  text
+          focused_workspace   #cba6f7   #cba6f7     #1e1e2e
+          active_workspace    #313244   #313244     #cdd6f4
+          inactive_workspace  #1e1e2e   #1e1e2e     #6c7086
+          urgent_workspace    #f38ba8   #f38ba8     #1e1e2e
+        }
 }
 
 # Shortcut to lock the sreen
@@ -241,9 +253,9 @@ exec_always --no-startup-id feh --bg-scale -z ~/Pictures/wallpaper/
 set $laptopDp "DP-2"
 set $mainDp "DVI-I-1-1"
 set $secDp "DVI-I-2-2"
-workspace $ws1 output $laptopDp
+workspace $ws0 output $laptopDp
 workspace $ws2 output $mainDp
-workspace $ws3 output $secDp
+workspace $ws1 output $secDp
 workspace $ws9 output $secDp
 #workspace $ws5 output $secDp
 
@@ -284,9 +296,14 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 #exec_always --no-startup-id picom -b
 
 #class                         border    backgr.    text     indicator
-client.focused              #1F262A   #1F262A   #93a1a1       #d64937
-client.unfocused            #141C21   #141C21   #93a1a1
-client.focused_inactive     #141c21   #141c21   #93a1a1
-client.urgent               #444444   #b08500   #93a1a1
+#client.focused              #1F262A   #1F262A   #93a1a1       #d64937
+#client.unfocused            #141C21   #141C21   #93a1a1
+#client.focused_inactive     #141c21   #141c21   #93a1a1
+#client.urgent               #444444   #b08500   #93a1a1
 
-
+# Catppuccin Mocha
+# class                 border    background text      indicator
+client.focused          #cba6f7   #1e1e2e    #cdd6f4   #f5c2e7
+client.unfocused        #313244   #1e1e2e    #6c7086   #313244
+client.focused_inactive #45475a   #1e1e2e    #a6adc8   #45475a
+client.urgent           #f38ba8   #1e1e2e    #cdd6f4   #f38ba8
